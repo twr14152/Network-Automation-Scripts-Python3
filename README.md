@@ -9,7 +9,6 @@ This has been a iterative learning process for me and I will be archiving or del
 - 08/03/2025 - DYI network database
 - Used sqlite for the DB. ((This is not for production just a learning exercise))
 - Used netmiko to pull data from a Devnet nxos device.
-- Sqlite3 was used in our script to put the data in our DB.
     - network_db/add_remove_device.py
     - network_db/schema
   

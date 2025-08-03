@@ -34,7 +34,7 @@ sqlite> CREATE TABLE devices (
 sqlite> .quit
 );
 ```
-I used netmiko to connect to one of the nxos devices in devnet to get some data. This data is not formated in json. It's simply pulled off the device. For the test its fine, it can always be refined. I used sqlite3 to add CRUD functionality. This script tests create, update, validates, and deletes the the data in the DB. You may notice that it says update failed because since this is the first time running it inserts the data not updates. It then reads the data in the database. Used pprint to make more readable. Finally it then deletes the data from the DB. 
+I used netmiko to connect to one of the nxos devices in devnet to get some data. This data is not formated in json. It's simply pulled off the device. For the test its fine, it can always be refined. I used sqlite3 to add CRUD functionality. This script tests create, update, validates, and deletes the the data in the DB. in this example I commented out the update and delete function as this is first time we are adding data to our database. Only add and validations functions are being called. Used pprint to make the validation portion more readable.
 
 ```
 pi@rasp4:~/Coding/python_folder/misc/netwk_db $ python3.12 add_remove_device.py 
@@ -482,7 +482,7 @@ nxos
   evicespi@rasp4:~/Coding/python_folder/misc/netwk_db $ 
 
 ```
-Now to delete the device from the database simply comment out the add, update, and validate functions and uncomment the delete function
+Now to delete the device from the database simply comment out the add, and validate functions and uncomment the delete function
 ```
 pi@rasp4:~/Coding/python_folder/misc/netwk_db $ python3.12 add_remove_device.py 
 Enter host device: sandbox-nxos-1.cisco.com

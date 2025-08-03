@@ -5,7 +5,14 @@ My goal has been to use this as a repository for knowledge retention as well kno
 I plan to continue to grow this respository as long as I'm still doing stuff in the network automation space.
 
 This has been a iterative learning process for me and I will be archiving or deleting scripts that no longer have value.
-
+### Network_DB
+- 08/03/2025 - DYI network database
+- Used sqlite for the DB. ((This is not for production just a learning exercise))
+- Used netmiko to pull data from a Devnet nxos device.
+- Sqlite3 was used in our script to put the data in our DB.
+    - network_db/add_remove_device.py
+    - network_db/schema
+  
 ### DNAC
 - Grabbing data out of DNAC
     - get_device_dnac.py

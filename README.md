@@ -61,6 +61,8 @@ This has been a iterative learning process for me and I will be archiving or del
   - nxapi_script_ex1.py
 
 ### Restconf 
+- 08/03/2025 - This repo is lacking in almost every way. I will try and update in my spare time. I just realized the code doesn't even run. So I updated and added a working example. 
+      - restconf/08.03.2025_restconf_ex.py
 - Created two scripts one to create an interface and the other to delete it
     - create_intf.py
     - delete_intf.py

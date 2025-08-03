@@ -1,0 +1,8 @@
+CREATE TABLE devices (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    hostname TEXT NOT NULL UNIQUE,
+    os_version TEXT,
+    mgmt_ip TEXT NOT NULL UNIQUE,
+    config TEXT,
+    last_updated DATETIME DEFAULT CURRENT_TIMESTAMP
+);

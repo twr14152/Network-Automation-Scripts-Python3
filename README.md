@@ -5,7 +5,13 @@ My goal has been to use this as a repository for knowledge retention as well kno
 I plan to continue to grow this respository as long as I'm still doing stuff in the network automation space.
 
 This has been a iterative learning process for me and I will be archiving or deleting scripts that no longer have value.
-
+### DIY Network Database
+- Build your own network database to hold device data
+- Used Sqlite for the sample and netmiko to pull the data
+- Test CRUD functionality
+    - network_db/add_remove_device.py
+    - network_db/schema
+  
 ### DNAC
 - Grabbing data out of DNAC
     - get_device_dnac.py

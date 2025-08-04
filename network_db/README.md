@@ -35,6 +35,8 @@ I used netmiko to connect to one of the nxos devices in devnet to get some data.
 ```
 pi@rasp4:~/Coding/python_folder/misc/netwk_db $ python3.12 add_remove_device.py 
 Enter host device: sandbox-nxos-1.cisco.com
+Username: <cropped>
+Password: <cropped>
 Gathering device data......
 Getting hostname:
 -----------------
@@ -48,14 +50,14 @@ Adding data to the database...
 Device 'nxos 
 ' inserted successfully.
 Reading data in the database...
-(7,
+(3,
  'nxos \n',
  '  NXOS: version 10.3(3) [Feature Release]\n',
  '  Internet Address is 10.10.20.95/24\n',
  '\n'
  '!Command: show running-config\n'
- '!Running configuration last done at: Sat Aug  2 19:44:45 2025\n'
- '!Time: Sat Aug  2 22:05:09 2025\n'
+ '!Running configuration last done at: Sun Aug  3 22:40:38 2025\n'
+ '!Time: Mon Aug  4 00:10:11 2025\n'
  '\n'
  'version 10.3(3) Bios:version  \n'
  'switchname nxos\n'
@@ -68,9 +70,12 @@ Reading data in the database...
  '\n'
  'feature nxapi\n'
  'feature bash-shell\n'
+ 'feature vrrp\n'
  'cfs eth distribute\n'
  'feature ospf\n'
  'feature netconf\n'
+ 'feature restconf\n'
+ 'feature interface-vlan\n'
  'feature hsrp\n'
  'feature vpc\n'
  '\n'
@@ -88,10 +93,23 @@ Reading data in the database...
  'rmon event 4 log trap public description WARNING(4) owner PMON@WARNING\n'
  'rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO\n'
  '\n'
- 'vlan 1,1041\n'
+ 'vlan 1,45,50,1041\n'
  '\n'
  'vrf context management\n'
  '  ip route 0.0.0.0/0 10.10.20.254\n'
+ 'nxapi http port 80\n'
+ '\n'
+ '\n'
+ 'interface Vlan1\n'
+ '\n'
+ 'interface Vlan45\n'
+ '  no shutdown\n'
+ '  ip address 100.45.45.1/24\n'
+ '\n'
+ 'interface Vlan100\n'
+ '  ip address 100.100.100.100/24\n'
+ '  hsrp version 2\n'
+ '  hsrp 100 \n'
  '\n'
  'interface Ethernet1/1\n'
  '\n'
@@ -103,6 +121,8 @@ Reading data in the database...
  'interface Ethernet1/3\n'
  '\n'
  'interface Ethernet1/4\n'
+ '  no switchport\n'
+ '  ip address 192.168.10.10/24\n'
  '\n'
  'interface Ethernet1/5\n'
  '\n'
@@ -221,8 +241,12 @@ Reading data in the database...
  'interface Ethernet1/62\n'
  '\n'
  'interface Ethernet1/63\n'
+ '  no switchport\n'
+ '  vrrp 1\n'
  '\n'
  'interface Ethernet1/64\n'
+ '  no switchport\n'
+ '  vrrp 1\n'
  '\n'
  'interface mgmt0\n'
  '  vrf member management\n'
@@ -248,13 +272,19 @@ Reading data in the database...
  '  terminal width  511\n'
  'line vty\n'
  'boot nxos bootflash:/nxos64-cs.10.3.3.F.bin \n'
+ 'router ospf Meshack\n'
+ '  router-id 10.10.10.10\n'
  'router ospf TEST\n'
  '  router-id 1.1.1.1\n'
+ 'event manager applet TEST\n'
+ '  event syslog pattern "Interface Ethernet1/4 is down"\n'
+ '  action 1 cli show vlan brief\n'
  '\n'
  'no logging console\n'
  '\n'
  '\n',
- '2025-08-03 15:25:12')
+ '2025-08-04 17:33:53')
+pi@rasp4:~/Coding/python_folder/misc/netwk_db $ 
 
 ```
 You can use sqlite browser to see the data in the database in its proper format. But for our purposes this is what it looks like when you cat the db. Not pretty but you can see the data is there.
@@ -478,10 +508,12 @@ nxos
   evicespi@rasp4:~/Coding/python_folder/misc/netwk_db $ 
 
 ```
-Now to delete the device from the database simply comment out the add, and validate functions and uncomment the delete function
+Now to delete the device from the database simply comment out the add, and validate functions, and uncomment the delete function
 ```
 pi@rasp4:~/Coding/python_folder/misc/netwk_db $ python3.12 add_remove_device.py 
 Enter host device: sandbox-nxos-1.cisco.com
+Username: <cropped>
+Password: <cropped>
 Gathering device data......
 Getting hostname:
 -----------------
@@ -494,16 +526,4 @@ Gathering data complete....
 Deleting data from the database...
 Deleted device: 'nxos 
 '
-pi@rasp4:~/Coding/python_folder/misc/netwk_db $ cat netwk.db 
-?I???IP++Ytablesqlite_sequencesqlite_sequenceCREATE TABLE sqlite_sequence(name,seq)?|OtabledevicesdevicesCREATE TABLE devices (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    hostname TEXT NOT NULL UNIQUE,
-    os_version TEXT,
-    mgmt_ip TEXT NOT NULL UNIQUE,
-    config TEXT,
-    last_updated DATETIME DEFAULT CURRENT_TIMESTAMP
-[-Andexsqlite_autoindex_devices_2devices-Andexsqlite_autoindex_devices_1devices
-?
-
-??
-  evicespi@rasp4:~/Coding/python_folder/misc/netwk_db $ ```
+pi@rasp4:~/Coding/python_folder/misc/netwk_db $  ```

@@ -16,13 +16,9 @@ CREATE TABLE devices (
 ```
 The next step was to build the database and add the schema.
 ```
-pi@rasp4:~/Coding/python_folder/misc/netwk_db $ touch netwk.db
-pi@rasp4:~/Coding/python_folder/misc/netwk_db $ sqlite3
+pi@rasp4:~/Coding/python_folder/misc/netwk_db $ sqlite3 netwk.db
 SQLite version 3.27.2 2019-02-25 16:06:06
 Enter ".help" for usage hints.
-Connected to a transient in-memory database.
-Use ".open FILENAME" to reopen on a persistent database.
-sqlite> .open netwk.db
 sqlite> CREATE TABLE devices (
    ...>     id INTEGER PRIMARY KEY AUTOINCREMENT,
    ...>     hostname TEXT NOT NULL UNIQUE,
@@ -32,7 +28,7 @@ sqlite> CREATE TABLE devices (
    ...>     last_updated DATETIME DEFAULT CURRENT_TIMESTAMP
    ...> );
 sqlite> .quit
-);
+pi@rasp4:~/Coding/python_folder/misc/netwk_db $
 ```
 I used netmiko to connect to one of the nxos devices in devnet to get some data. This data is not formated in json. It's simply pulled off the device. For the test its fine, it can always be refined. I used sqlite3 to add CRUD functionality. This script tests create, update, validates, and deletes the the data in the DB. in this example I commented out the update and delete function as this is first time we are adding data to our database. Only add and validations functions are being called. Used pprint to make the validation portion more readable.
 

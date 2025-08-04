@@ -4,12 +4,14 @@ from netmiko import ConnectHandler
 from pprint import pprint as pp
 
 hosts = input("Enter host device: ")
+user = input("Username: ")
+password = input("Password: ")
 
 ios_rtr = {
         "device_type": "cisco_nxos",
         "ip": hosts,
-        "username": "admin",
-        "password": "Admin_1234!",
+        "username": user,
+        "password": password,
 }
 
 

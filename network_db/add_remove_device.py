@@ -48,7 +48,7 @@ device = {
     "config": config,
 }
 
-def add_device(conn, **device):
+def add(conn, **device):
     print("Adding data to the database...")
     try:
         cursor.execute("""
@@ -60,7 +60,7 @@ def add_device(conn, **device):
     except Exception as e:
         print(f"Error adding device: {e}")
 
-def update_device(conn, **device):
+def update(conn, **device):
     print("Updating data in the database...")
     try:
         cursor = conn.cursor()
@@ -77,7 +77,7 @@ def update_device(conn, **device):
     except Exception as e:
         print(f"Error update failed: {e}")
 
-def validate_device(conn, hostname):
+def read(conn, hostname):
     print("Reading data in the database...")
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM devices WHERE hostname = ?", (hostname,))
@@ -85,7 +85,7 @@ def validate_device(conn, hostname):
     pp(row)
 
 
-def delete_device(conn, hostname):
+def delete(conn, hostname):
     print("Deleting data from the database...")
     cursor = conn.cursor()
     cursor.execute("DELETE FROM devices WHERE hostname = ?", (hostname,))
@@ -95,10 +95,8 @@ def delete_device(conn, hostname):
     else:
         print(f"No device '{hostname}' found")
 
-add_device(conn, **device)
-update_device(conn, **device)
-validate_device(conn, device["hostname"])
-delete_device(conn, device["hostname"])
+add(conn, **device)
+update(conn, **device)
+read(conn, device["hostname"])
+delete(conn, device["hostname"])
 conn.close()
-
-

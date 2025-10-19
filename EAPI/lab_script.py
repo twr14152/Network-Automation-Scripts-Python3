@@ -1,6 +1,5 @@
 import requests
 import json
-from pprint import pprint as pp
 import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -26,5 +25,6 @@ for host in hosts:
             "id": "1"
             }
     response = requests.post(url, data=json.dumps(payload), auth=('admin', 'admin'), verify=False)
-    pp(response.json())
+    print(json.dumps(response.json(), indent=2))
     print(f"Closing connection to {host}...\n\n")
+

@@ -1,10 +1,15 @@
 # Network-Automation-Scripts using Python3
-# Libraries: Pyeapi, Netmiko, Napalm, Telnetlib, Restconf, Nxapi, Nornir, Netconf
+# Libraries: Pyeapi, eAPI, Netmiko, Napalm, Telnetlib, Restconf, Nxapi, Nornir, Netconf
 This repository holds various automation scripts I've written over the years. 
 My goal has been to use this as a repository for knowledge retention as well knowledge sharing.
 I plan to continue to grow this respository as long as I'm still doing stuff in the network automation space.
 
 This has been a iterative learning process for me and I will be archiving or deleting scripts that no longer have value.
+### EAPI
+- 10/19/2025 - Lab script
+- This is such an easy way to manage arista devices
+  - lab_script.py
+  - 
 ### Network_DB
 - 08/03/2025 - DYI network database
 - Used sqlite for the DB. ((This is not for production just a learning exercise))

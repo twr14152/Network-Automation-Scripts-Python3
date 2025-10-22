@@ -1,3 +1,9 @@
+# EAPI
+- A simple way to interface with arista using jsonrpc. 
+- It only uses POST for runCmds method.
+- The only challenging thing about it is formating the output of the data
+ 
+
 Sample output
 ```
 $ python lab_script.py 

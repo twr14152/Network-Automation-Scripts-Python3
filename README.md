@@ -7,7 +7,7 @@ I plan to continue to grow this respository as long as I'm still doing stuff in 
 This has been a iterative learning process for me and I will be archiving or deleting scripts that no longer have value.
 ### EAPI
 - 10/19/2025 - Using eAPI to get data and configure devices
-- Using requests to interface with aristas eAPI - lab_script.py
+- EAPI/lab_script.py
     
 ### Network_DB
 - 08/03/2025 - DYI network database

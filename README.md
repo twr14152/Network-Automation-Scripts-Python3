@@ -3,7 +3,7 @@
 This repository holds various scripts I've written over the years. 
 The goal is to create a repository that could be used for knowledge retention and reference.
 
-This has been an iterative learning process for me and I will be archiving or deleting scripts that no longer have value.
+I will be archiving or deleting scripts that no longer provide value.
 
 ### eAPI
 - 10/19/2025 - Using eAPI to get data and configure devices

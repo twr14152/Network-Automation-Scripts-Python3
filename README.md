@@ -7,8 +7,8 @@ I plan to continue to grow this respository as long as I'm still doing stuff in 
 This has been a iterative learning process for me and I will be archiving or deleting scripts that no longer have value.
 ### eAPI
 - 10/19/2025 - Using eAPI to get data and configure devices
-- eAPI/lab_script.py
-- 
+- Script using requests - eAPI/lab_script.py
+- Script using jsonrpclib -  eAPI/lab_script_2.py 
     
 ### Network_DB
 - 08/03/2025 - DYI network database

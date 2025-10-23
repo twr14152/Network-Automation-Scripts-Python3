@@ -6,7 +6,7 @@
 
 The first script uses requests and is written with more explicit code. You can see the data format. 
 ```
-script.py 
+lab_script.py 
 ```
 Sample output
 ```

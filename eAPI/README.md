@@ -1,9 +1,8 @@
 # eAPI
-- A simple way to interface with arista using jsonrpc. 
+- A simple way to interface with arista using requests and jsonrpc. 
 - It only uses POST for runCmds method.
 - The only challenging thing about it is formating the output of the data
  
-
 Sample output
 ```
 $ python lab_script.py 
@@ -140,8 +139,8 @@ Connected to clab-lab3-ceos3..
 }
 Closing connection to clab-lab3-ceos3...
 ```
-The other script is just a more streamlined version of the script that uses the actual jsonrpclib to run commands on the device using eAPI.
-Just thought it was interesting.
+The other script is just uses jsonrpclib (instead of requests) to run commands on the device using eAPI.
+I prefer the requests version as I think its more explicit in whats being done. Just thought it was interesting. 
 
 ```
 (lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts/controller$ python3 lab_script_2.py 

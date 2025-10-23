@@ -4,14 +4,14 @@ import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-host_list = input("Enter device to connect to: ")
+host_list = input("Enter host or hostnames separated by ',': ")
 hosts = [i.strip() for i in host_list.split(",")] #splits into a list and removes white space
 
 commands = input('Enter commands to run seperated by ",": ')
 cmds = commands.split(",")
 
 for host in hosts:
-    url = "https://" + host + "/command-api"
+    url = "https://clab-lab3-" + host + "/command-api"
     print(f"Connected to {host}..")
     headers = {'Content-Type': 'application/json'}
     payload = {

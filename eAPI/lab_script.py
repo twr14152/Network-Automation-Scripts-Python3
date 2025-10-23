@@ -11,7 +11,7 @@ commands = input('Enter commands to run seperated by ",": ')
 cmds = commands.split(",")
 
 for host in hosts:
-    url = "https://clab-lab3-" + host + "/command-api"
+    url = f"https://clab-lab3-{host}/command-api"
     print(f"Connected to {host}..")
     headers = {'Content-Type': 'application/json'}
     payload = {
@@ -27,4 +27,3 @@ for host in hosts:
     response = requests.post(url, data=json.dumps(payload), auth=('admin', 'admin'), verify=False)
     print(json.dumps(response.json(), indent=2))
     print(f"Closing connection to {host}...\n\n")
-

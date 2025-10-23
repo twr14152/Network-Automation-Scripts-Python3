@@ -5,9 +5,10 @@ My goal has been to use this as a repository for knowledge retention as well kno
 I plan to continue to grow this respository as long as I'm still doing stuff in the network automation space.
 
 This has been a iterative learning process for me and I will be archiving or deleting scripts that no longer have value.
-### EAPI
+### eAPI
 - 10/19/2025 - Using eAPI to get data and configure devices
-- EAPI/lab_script.py
+- eAPI/lab_script.py
+- 
     
 ### Network_DB
 - 08/03/2025 - DYI network database

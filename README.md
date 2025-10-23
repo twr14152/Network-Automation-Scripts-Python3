@@ -1,10 +1,10 @@
 # Network-Automation-Scripts using Python3
 # Libraries: Pyeapi, eAPI, Netmiko, Napalm, Telnetlib, Restconf, Nxapi, Nornir, Netconf
-This repository holds various automation scripts I've written over the years. 
-My goal has been to use this as a repository for knowledge retention as well knowledge sharing.
-I plan to continue to grow this respository as long as I'm still doing stuff in the network automation space.
+This repository holds various scripts I've written over the years. 
+The goal is to create a repository that could be used for knowledge retention and reference.
 
-This has been a iterative learning process for me and I will be archiving or deleting scripts that no longer have value.
+This has been an iterative learning process for me and I will be archiving or deleting scripts that no longer have value.
+
 ### eAPI
 - 10/19/2025 - Using eAPI to get data and configure devices
 - Script using requests - eAPI/lab_script.py

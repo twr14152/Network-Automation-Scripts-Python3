@@ -140,7 +140,7 @@ Connected to clab-lab3-ceos3..
 Closing connection to clab-lab3-ceos3...
 ```
 The other script is just uses jsonrpclib (instead of requests) to run commands on the device using eAPI.
-I prefer the requests version as I think its more explicit in whats being done. Just thought it was interesting. 
+I prefer the requests version as I think its more explicit. Just thought it was interesting. 
 
 ```
 (lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts/controller$ python3 lab_script_2.py 

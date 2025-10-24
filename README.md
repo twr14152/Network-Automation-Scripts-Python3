@@ -5,6 +5,11 @@ The goal is to create a repository that could be used for knowledge retention an
 
 I will be archiving or deleting scripts that no longer provide value.
 
+### pyGNMI
+- 10/24/2025 - Playing around with pyGNMI get and set functionality
+- pyGNMI/get_intf_info_gnmi.py - pulls interface config / state / counters
+- pyGNMI/set_config_gnmi.py - set interface description
+
 ### eAPI
 - 10/19/2025 - Using eAPI to get data and configure devices
 - Script using requests - eAPI/lab_script.py

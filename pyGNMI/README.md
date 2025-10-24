@@ -30,6 +30,8 @@ Interface configuration:
     }
   ]
 }
+```
+```
 (lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ python get_intf_info_gnmi.py 
 Enter target interface (example Ethernet1):Ethernet2
 What do you want to look at (config, state, counters): state
@@ -81,6 +83,9 @@ Interface status:
     }
   ]
 }
+
+```
+```
 (lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ python get_intf_info_gnmi.py 
 Enter target interface (example Ethernet1):Ethernet2
 What do you want to look at (config, state, counters): counters
@@ -123,7 +128,7 @@ Interface counters:
 
 The next script will change the interface description on ethernet1 of device clab-lab3-ceos1
 
-To show the interface we will run the previous script to get the state of Ethernet 1 on the device
+Pre-change state
 
 ```
 (lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ python get_intf_info_gnmi.py 
@@ -179,13 +184,13 @@ Interface status:
 }
 ```
 Now run the set config script
-'''
+```
 (lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ python set_config_gnmi.py 
 Set response:
 {'timestamp': 1761333654396145219, 'prefix': None, 'response': [{'path': 'interfaces/interface[name=Ethernet1]/config/description', 'op': 'UPDATE'}]}
 (lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ 
 ```
-Now verify the configuration updated
+Post change state
 ```
 (lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$python get_intf_info_gnmi.py 
 Enter target interface (example Ethernet1):Ethernet1

@@ -5,7 +5,7 @@ So far of the model driven programmability subtypes gnmi or pygnmi has been the 
 So the first script shows how to pull data from the device
 
 ```
-(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ python get_intf_info_gnmi.py 
+$ python get_intf_info_gnmi.py 
 Enter target interface (example Ethernet1):Ethernet2
 What do you want to look at (config, state, counters): config
 Interface configuration:
@@ -32,7 +32,7 @@ Interface configuration:
 }
 ```
 ```
-(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ python get_intf_info_gnmi.py 
+$ python get_intf_info_gnmi.py 
 Enter target interface (example Ethernet1):Ethernet2
 What do you want to look at (config, state, counters): state
 Interface status:
@@ -86,7 +86,7 @@ Interface status:
 
 ```
 ```
-(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ python get_intf_info_gnmi.py 
+$ python get_intf_info_gnmi.py 
 Enter target interface (example Ethernet1):Ethernet2
 What do you want to look at (config, state, counters): counters
 Interface counters:
@@ -123,7 +123,6 @@ Interface counters:
     }
   ]
 }
-(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ 
 ```
 
 The next script will change the interface description on ethernet1 of device clab-lab3-ceos1
@@ -131,7 +130,7 @@ The next script will change the interface description on ethernet1 of device cla
 Pre-change state
 
 ```
-(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ python get_intf_info_gnmi.py 
+$ python get_intf_info_gnmi.py 
 Enter target interface (example Ethernet1):Ethernet1
 What do you want to look at (config, state, counters): state
 Interface status:
@@ -185,14 +184,14 @@ Interface status:
 ```
 Now run the set config script
 ```
-(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ python set_config_gnmi.py 
+$ python set_config_gnmi.py 
 Set response:
 {'timestamp': 1761333654396145219, 'prefix': None, 'response': [{'path': 'interfaces/interface[name=Ethernet1]/config/description', 'op': 'UPDATE'}]}
 (lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ 
 ```
 Post change state
 ```
-(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$python get_intf_info_gnmi.py 
+$ python get_intf_info_gnmi.py 
 Enter target interface (example Ethernet1):Ethernet1
 What do you want to look at (config, state, counters): state
 Interface status:
@@ -243,7 +242,6 @@ Interface status:
     }
   ]
 }
-(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ 
 ```
 
 

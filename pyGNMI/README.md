@@ -4,7 +4,7 @@ So far of the model driven programmability subtypes gnmi or pygnmi has been the 
 
 So the first script shows how to pull data from the device
 ```
-(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ python  get_intf_info_gnmi.py 
+$ python  get_intf_info_gnmi.py 
 Enter host or hosts separated by ',': ceos1, ceos2, ceos3
 Enter target interface (example Ethernet1):Loopback20
 What do you want to look at (config, state, counters, capabilities): config
@@ -74,7 +74,7 @@ ceos3 interface configuration:
     }
   ]
 }
-(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ cat get_intf_info_gnmi.py 
+$ cat get_intf_info_gnmi.py 
 ```
 Gathering config, state, and counters examples. **The script was updated for multi device operation.
 ```
@@ -203,51 +203,70 @@ The next script will change the interface description on ethernet1 of device cla
 Pre-change state
 
 ```
-$ python get_intf_info_gnmi.py 
-Enter target interface (example Ethernet1):Ethernet1
-What do you want to look at (config, state, counters): state
-Interface status:
+$ python  get_intf_info_gnmi.py 
+Enter host or hosts separated by ',': ceos1, ceos2, ceos3
+Enter target interface (example Ethernet1):Loopback20
+What do you want to look at (config, state, counters, capabilities): config
+ceos1 interface configuration:
 {
   "notification": [
     {
-      "timestamp": 1761333621770202036,
+      "timestamp": 1761488757456086353,
       "prefix": null,
       "alias": null,
       "atomic": false,
       "update": [
         {
-          "path": "interfaces/interface[name=Ethernet1]/state",
+          "path": "interfaces/interface[name=Loopback20]/config",
           "val": {
-            "openconfig-interfaces:admin-status": "UP",
-            "openconfig-interfaces:counters": {
-              "carrier-transitions": "4",
-              "in-broadcast-pkts": "0",
-              "in-discards": "0",
-              "in-errors": "0",
-              "in-fcs-errors": "0",
-              "in-multicast-pkts": "91719",
-              "in-octets": "124274196",
-              "in-pkts": "1504460",
-              "in-unicast-pkts": "1412741",
-              "out-broadcast-pkts": "0",
-              "out-discards": "0",
-              "out-errors": "0",
-              "out-multicast-pkts": "7",
-              "out-octets": "518",
-              "out-pkts": "7",
-              "out-unicast-pkts": "0"
-            },
-            "openconfig-interfaces:description": "[add description]",       <---- Config will change this
-            "openconfig-platform-port:hardware-port": "Ethernet1-Port",
-            "openconfig-interfaces:ifindex": 1,
-            "arista-intf-augments:inactive": false,
-            "openconfig-interfaces:last-change": "1760731318246421813",
-            "openconfig-interfaces:management": false,
-            "openconfig-interfaces:mtu": 0,
-            "openconfig-interfaces:name": "Ethernet1",
-            "openconfig-interfaces:oper-status": "UP",
-            "openconfig-platform-transceiver:transceiver": "Ethernet1",
-            "openconfig-interfaces:type": "iana-if-type:ethernetCsmacd"
+            "openconfig-interfaces:description": "testing gNMI automation",
+            "openconfig-interfaces:loopback-mode": "FACILITY",
+            "openconfig-interfaces:name": "Loopback20",
+            "openconfig-interfaces:type": "iana-if-type:softwareLoopback"
+          }
+        }
+      ]
+    }
+  ]
+}
+ceos2 interface configuration:
+{
+  "notification": [
+    {
+      "timestamp": 1761488757903808509,
+      "prefix": null,
+      "alias": null,
+      "atomic": false,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Loopback20]/config",
+          "val": {
+            "openconfig-interfaces:description": "testing gNMI automation",
+            "openconfig-interfaces:loopback-mode": "FACILITY",
+            "openconfig-interfaces:name": "Loopback20",
+            "openconfig-interfaces:type": "iana-if-type:softwareLoopback"
+          }
+        }
+      ]
+    }
+  ]
+}
+ceos3 interface configuration:
+{
+  "notification": [
+    {
+      "timestamp": 1761488758130981701,
+      "prefix": null,
+      "alias": null,
+      "atomic": false,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Loopback20]/config",
+          "val": {
+            "openconfig-interfaces:description": "testing gNMI automation",
+            "openconfig-interfaces:loopback-mode": "FACILITY",
+            "openconfig-interfaces:name": "Loopback20",
+            "openconfig-interfaces:type": "iana-if-type:softwareLoopback"
           }
         }
       ]
@@ -257,64 +276,98 @@ Interface status:
 ```
 Now run the set config script
 ```
-$ python set_config_gnmi.py 
+$ python set_intf_description_gnmi.py 
+Enter host or hosts separated by ',': ceos1, ceos2, ceos3
+Add/Change interface description
+Enter interface: Loopback20
+Enter interface description: [AVAILABLE FOR USE]
 Set response:
-{'timestamp': 1761333654396145219, 'prefix': None, 'response': [{'path': 'interfaces/interface[name=Ethernet1]/config/description', 'op': 'UPDATE'}]}
-(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ 
+{'timestamp': 1761489678288634591, 'prefix': None, 'response': [{'path': 'interfaces/interface[name=Loopback20]/config/description', 'op': 'UPDATE'}]}
+Add/Change interface description
+Enter interface: Loopback20
+Enter interface description: [AVAILABLE FOR USE]
+Set response:
+{'timestamp': 1761489694003906084, 'prefix': None, 'response': [{'path': 'interfaces/interface[name=Loopback20]/config/description', 'op': 'UPDATE'}]}
+Add/Change interface description
+Enter interface: Loopback20
+Enter interface description: [AVAILABLE FOR USE]
+Set response:
+{'timestamp': 1761489702607996402, 'prefix': None, 'response': [{'path': 'interfaces/interface[name=Loopback20]/config/description', 'op': 'UPDATE'}]}
+
 ```
 Post change state
 ```
 $ python get_intf_info_gnmi.py 
-Enter target interface (example Ethernet1):Ethernet1
-What do you want to look at (config, state, counters): state
-Interface status:
+Enter host or hosts separated by ',': ceos1, ceos2, ceos3
+Enter target interface (example Ethernet1):Loopback20
+What do you want to look at (config, state, counters, capabilities): config
+ceos1 interface configuration:
 {
   "notification": [
     {
-      "timestamp": 1761333678056116857,
+      "timestamp": 1761489978636707639,
       "prefix": null,
       "alias": null,
       "atomic": false,
       "update": [
         {
-          "path": "interfaces/interface[name=Ethernet1]/state",
+          "path": "interfaces/interface[name=Loopback20]/config",
           "val": {
-            "openconfig-interfaces:admin-status": "UP",
-            "openconfig-interfaces:counters": {
-              "carrier-transitions": "4",
-              "in-broadcast-pkts": "0",
-              "in-discards": "0",
-              "in-errors": "0",
-              "in-fcs-errors": "0",
-              "in-multicast-pkts": "91727",
-              "in-octets": "124285746",
-              "in-pkts": "1504600",
-              "in-unicast-pkts": "1412873",
-              "out-broadcast-pkts": "0",
-              "out-discards": "0",
-              "out-errors": "0",
-              "out-multicast-pkts": "7",
-              "out-octets": "518",
-              "out-pkts": "7",
-              "out-unicast-pkts": "0"
-            },
-            "openconfig-interfaces:description": "connected to ceos2",     <------ Updated
-            "openconfig-platform-port:hardware-port": "Ethernet1-Port",
-            "openconfig-interfaces:ifindex": 1,
-            "arista-intf-augments:inactive": false,
-            "openconfig-interfaces:last-change": "1760731318246421813",
-            "openconfig-interfaces:management": false,
-            "openconfig-interfaces:mtu": 0,
-            "openconfig-interfaces:name": "Ethernet1",
-            "openconfig-interfaces:oper-status": "UP",
-            "openconfig-platform-transceiver:transceiver": "Ethernet1",
-            "openconfig-interfaces:type": "iana-if-type:ethernetCsmacd"
+            "openconfig-interfaces:description": "[AVAILABLE FOR USE]",
+            "openconfig-interfaces:loopback-mode": "FACILITY",
+            "openconfig-interfaces:name": "Loopback20",
+            "openconfig-interfaces:type": "iana-if-type:softwareLoopback"
           }
         }
       ]
     }
   ]
 }
+ceos2 interface configuration:
+{
+  "notification": [
+    {
+      "timestamp": 1761489979073277396,
+      "prefix": null,
+      "alias": null,
+      "atomic": false,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Loopback20]/config",
+          "val": {
+            "openconfig-interfaces:description": "[AVAILABLE FOR USE]",
+            "openconfig-interfaces:loopback-mode": "FACILITY",
+            "openconfig-interfaces:name": "Loopback20",
+            "openconfig-interfaces:type": "iana-if-type:softwareLoopback"
+          }
+        }
+      ]
+    }
+  ]
+}
+ceos3 interface configuration:
+{
+  "notification": [
+    {
+      "timestamp": 1761489979287548846,
+      "prefix": null,
+      "alias": null,
+      "atomic": false,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Loopback20]/config",
+          "val": {
+            "openconfig-interfaces:description": "[AVAILABLE FOR USE]",
+            "openconfig-interfaces:loopback-mode": "FACILITY",
+            "openconfig-interfaces:name": "Loopback20",
+            "openconfig-interfaces:type": "iana-if-type:softwareLoopback"
+          }
+        }
+      ]
+    }
+  ]
+}
+
 ```
 
 

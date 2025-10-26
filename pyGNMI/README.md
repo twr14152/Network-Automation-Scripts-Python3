@@ -1,8 +1,8 @@
 # pyGNMI
 
-These scripts are just testing the (show/get) commands, and the (set/config) commands. Upon much trial and error I found that I could manipulate interface settings but was unable to adjust routing parameters using pyGNMI. So from what I can tell this is not yet a fill featured automation platform yet. Limitations with arista using openconfig read/write capabilites. A common problem amoungst vendors. So gNMI has 4 main features get, set, capabilites, and subscribe. I have yet to test subscribe functionality. Save that for another day...
+These scripts are just testing the (show/get) commands, and the (set/config) commands. Upon much trial and error I found that I could manipulate interface settings but was unable to adjust routing parameters using pyGNMI. So from what I can tell this is not yet a full featured automation platform with Arista. There are limitations in the openconfig implementaion on the ceos-lab platform with regard to making routing changes with the read/write capabilites. Looks like its only read only at this time.  There are four main features with gNMI get, set, capabilites, and subscribe. I have yet to test subscribe functionality. Save that for another day...
 
-So the first script shows how to pull data from the device(s)
+So the first script shows how to pull or "get" data from the device(s)
 ```
 $ python  get_intf_info_gnmi.py 
 Enter host or hosts separated by ',': ceos1, ceos2, ceos3
@@ -198,7 +198,7 @@ Interface counters:
 }
 ```
 
-The next script will change the interface description on ethernet1 of device clab-lab3-ceos1
+The set functionality will update or change configuration settings on a device.
 
 Pre-change state
 
@@ -274,7 +274,7 @@ ceos3 interface configuration:
   ]
 }
 ```
-Now run the set config script
+Now run the set config script to update interface description
 ```
 $ python set_intf_description_gnmi.py 
 Enter host or hosts separated by ',': ceos1, ceos2, ceos3
@@ -313,7 +313,7 @@ ceos1 interface configuration:
         {
           "path": "interfaces/interface[name=Loopback20]/config",
           "val": {
-            "openconfig-interfaces:description": "[AVAILABLE FOR USE]",
+            "openconfig-interfaces:description": "[AVAILABLE FOR USE]", <-- Updated interface description
             "openconfig-interfaces:loopback-mode": "FACILITY",
             "openconfig-interfaces:name": "Loopback20",
             "openconfig-interfaces:type": "iana-if-type:softwareLoopback"
@@ -335,7 +335,7 @@ ceos2 interface configuration:
         {
           "path": "interfaces/interface[name=Loopback20]/config",
           "val": {
-            "openconfig-interfaces:description": "[AVAILABLE FOR USE]",
+            "openconfig-interfaces:description": "[AVAILABLE FOR USE]", <-- Updated interface description
             "openconfig-interfaces:loopback-mode": "FACILITY",
             "openconfig-interfaces:name": "Loopback20",
             "openconfig-interfaces:type": "iana-if-type:softwareLoopback"
@@ -357,7 +357,7 @@ ceos3 interface configuration:
         {
           "path": "interfaces/interface[name=Loopback20]/config",
           "val": {
-            "openconfig-interfaces:description": "[AVAILABLE FOR USE]",
+            "openconfig-interfaces:description": "[AVAILABLE FOR USE]", <-- Updated interface description
             "openconfig-interfaces:loopback-mode": "FACILITY",
             "openconfig-interfaces:name": "Loopback20",
             "openconfig-interfaces:type": "iana-if-type:softwareLoopback"

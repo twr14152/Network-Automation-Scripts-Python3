@@ -2,7 +2,7 @@
 
 So far of the model driven programmability subtypes gnmi or pygnmi has been the easiest for me to get up and running and play around with, I'm not doing anything special just getting the basics down. These scripts are just testing the show or get commands, and the set or config commands.
 
-So the first script shows how to pull data from the device
+So the first script shows how to pull data from the device(s)
 ```
 $ python  get_intf_info_gnmi.py 
 Enter host or hosts separated by ',': ceos1, ceos2, ceos3

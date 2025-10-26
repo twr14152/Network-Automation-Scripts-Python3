@@ -10,7 +10,7 @@ lab_script.py
 ```
 Sample output
 ```
-(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts/controller$ python lab_script.py 
+$ python lab_script.py 
 Enter host or hostnames separated by ',': ceos1, ceos2, ceos3
 Enter commands to run seperated by ",": show hostname
 Connected to ceos1..
@@ -59,7 +59,7 @@ The other script is just uses jsonrpclib (instead of requests) to run commands o
 lab_script_2.py
 ```
 ```
-(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts/controller$ python lab_script_2.py 
+$ python lab_script_2.py 
 Enter host or hosts separated by ',': ceos1, ceos2, ceos3
 Enter commands: show hostname
 [

@@ -3,7 +3,80 @@
 So far of the model driven programmability subtypes gnmi or pygnmi has been the easiest for me to get up and running and play around with, I'm not doing anything special just getting the basics down. These scripts are just testing the show or get commands, and the set or config commands.
 
 So the first script shows how to pull data from the device
-
+```
+(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ python  get_intf_info_gnmi.py 
+Enter host or hosts separated by ',': ceos1, ceos2, ceos3
+Enter target interface (example Ethernet1):Loopback20
+What do you want to look at (config, state, counters, capabilities): config
+ceos1 interface configuration:
+{
+  "notification": [
+    {
+      "timestamp": 1761488757456086353,
+      "prefix": null,
+      "alias": null,
+      "atomic": false,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Loopback20]/config",
+          "val": {
+            "openconfig-interfaces:description": "testing gNMI automation",
+            "openconfig-interfaces:loopback-mode": "FACILITY",
+            "openconfig-interfaces:name": "Loopback20",
+            "openconfig-interfaces:type": "iana-if-type:softwareLoopback"
+          }
+        }
+      ]
+    }
+  ]
+}
+ceos2 interface configuration:
+{
+  "notification": [
+    {
+      "timestamp": 1761488757903808509,
+      "prefix": null,
+      "alias": null,
+      "atomic": false,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Loopback20]/config",
+          "val": {
+            "openconfig-interfaces:description": "testing gNMI automation",
+            "openconfig-interfaces:loopback-mode": "FACILITY",
+            "openconfig-interfaces:name": "Loopback20",
+            "openconfig-interfaces:type": "iana-if-type:softwareLoopback"
+          }
+        }
+      ]
+    }
+  ]
+}
+ceos3 interface configuration:
+{
+  "notification": [
+    {
+      "timestamp": 1761488758130981701,
+      "prefix": null,
+      "alias": null,
+      "atomic": false,
+      "update": [
+        {
+          "path": "interfaces/interface[name=Loopback20]/config",
+          "val": {
+            "openconfig-interfaces:description": "testing gNMI automation",
+            "openconfig-interfaces:loopback-mode": "FACILITY",
+            "openconfig-interfaces:name": "Loopback20",
+            "openconfig-interfaces:type": "iana-if-type:softwareLoopback"
+          }
+        }
+      ]
+    }
+  ]
+}
+(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts$ cat get_intf_info_gnmi.py 
+```
+Gathering config, state, and counters examples. **The script was updated for multi device operation.
 ```
 $ python get_intf_info_gnmi.py 
 Enter target interface (example Ethernet1):Ethernet2

@@ -197,6 +197,66 @@ Interface counters:
   ]
 }
 ```
+Get devices capabilities - output cropped as its too verbose.
+```
+$ python get_intf_info_gnmi.py 
+Enter host or hosts separated by ',': ceos1
+Enter target interface (example Ethernet1):
+What do you want to look at (config, state, counters, capabilities): capabilities
+ceos1 capabilities:
+{
+  "supported_models": [
+    {
+      "name": "arista-srte-augments",
+      "organization": "Arista Networks, Inc.",
+      "version": "1.1.1"
+    },
+    {
+      "name": "openconfig-platform",
+      "organization": "OpenConfig working group",
+      "version": "0.31.0"
+    },
+    {
+      "name": "arista-isis-augments",
+      "organization": "Arista Networks, Inc.",
+      "version": "1.14.0"
+    },
+    {
+      "name": "arista-exp-eos-l2protocolforwarding",
+      "organization": "Arista Networks, Inc.",
+      "version": "1.1.0"
+    },
+    {
+      "name": "arista-vlan-augments",
+      "organization": "Arista Networks <http://arista.com/>",
+      "version": "1.1.2"
+    },
+    {
+      "name": "arista-netinst-deviations",
+      "organization": "Arista Networks, Inc.",
+      "version": "1.4.0"
+    },
+<cropped>
+    {
+      "name": "arista-exp-eos-vxlan-config",
+      "organization": "Arista Networks <http://arista.com/>",
+      "version": "0.2.1"
+    },
+    {
+      "name": "openconfig-ptp-types",
+      "organization": "OpenConfig working group",
+      "version": "1.0.0"
+    }
+  ],
+  "supported_encodings": [
+    "json",
+    "json_ietf",
+    "ascii"
+  ],
+  "gnmi_version": "0.7.0"
+}
+
+```
 
 The set functionality will update or change configuration settings on a device.
 

@@ -1,6 +1,6 @@
 # pyGNMI
 
-So far of the model driven programmability subtypes gnmi or pygnmi has been the easiest for me to get up and running and play around with, I'm not doing anything special just getting the basics down. These scripts are just testing the show or get commands, and the set or config commands.
+These scripts are just testing the (show/get) commands, and the (set/config) commands. Upon much trial and error I found that I could manipulate interface settings but was unable to adjust routing parameters using pyGNMI. So from what I can tell this is not yet a fill featured automation platform yet. Limitations with arista using openconfig read/write capabilites. A common problem amoungst vendors. So gNMI has 4 main features get, set, capabilites, and subscribe. I have yet to test subscribe functionality. Save that for another day...
 
 So the first script shows how to pull data from the device(s)
 ```

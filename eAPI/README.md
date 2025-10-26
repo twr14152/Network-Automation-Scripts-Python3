@@ -80,7 +80,7 @@ Enter commands: show hostname
     "fqdn": "ceos3"
   }
 ]
-(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts/controller$ 
+$ 
 ```
 
 

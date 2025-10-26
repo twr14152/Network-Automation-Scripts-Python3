@@ -8,7 +8,7 @@ I will be archiving or deleting scripts that no longer provide value.
 ### pyGNMI
 - 10/24/2025 - Playing around with pyGNMI (get/set) functionality
 - Interface configuration possible with arista openconfig yang models using pyGNMI
-- Had no luck configurating any ospf configurations on the devices using pyGNMI. Believe it to be an issue with aristas openconfig/yang compatability/integration
+- Had no luck configurating any ospf on the devices using pyGNMI. Believe it to be an issue with aristas openconfig/yang compatability/integration
 - pyGNMI/get_intf_info_gnmi.py - pulls interface - (config/state/counters/capabilities)
 - pyGNMI/set_config_gnmi.py - set interface description
 

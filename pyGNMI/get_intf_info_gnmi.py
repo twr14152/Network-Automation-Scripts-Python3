@@ -3,7 +3,7 @@ import json
 
 host_list = input("Enter host or hosts separated by ',': ")
 hosts = [i.strip() for i in host_list.split(",")] 
-PORT = 6030
+PORT = 57400
 USERNAME = "admin"
 PASSWORD = "admin"
 

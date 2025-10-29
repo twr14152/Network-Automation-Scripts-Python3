@@ -1,5 +1,7 @@
 # pyGNMI
 
+Playing around in the lab I noticed that ceos defaults to port TCP/6030 for gNMI. This port was pre-standard. So I updated it to standard on the devices and needed to update the MGMT-ACL to allow TCP/57400. Verified that was the only change necessary to get it working. Other devices use the standard port so I figured why not.
+
 These scripts are just testing the (show/get) commands, and the (set/config) commands. Upon much trial and error I found that I could manipulate interface settings but was unable to adjust routing parameters using pyGNMI. So from what I can tell this is not yet a full featured automation platform with Arista. There are limitations in the openconfig implementaion on the ceos-lab platform with regard to making routing changes with the read/write capabilites. Looks like its only read only at this time.  There are four main features with gNMI get, set, capabilites, and subscribe. I have yet to test subscribe functionality. Save that for another day...
 
 So the first script shows how to pull or "get" data from the device(s)

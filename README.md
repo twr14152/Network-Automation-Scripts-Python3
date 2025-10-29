@@ -6,6 +6,7 @@ The goal is to create a repository that could be used for knowledge retention an
 I will be archiving or deleting scripts that no longer provide value.
 
 ### pyGNMI
+- 10/29/2025 - Arista ceos by default use port TCP/6030 which was pre-standard so updated that to TCP/57400. You do need to update MGMT-ACL to permit it to get it to work
 - 10/24/2025 - Playing around with pyGNMI (get/set) functionality
 - Interface configuration possible with arista openconfig yang models using pyGNMI
 - Had no luck configurating any ospf on the devices using pyGNMI. Believe it to be an issue with aristas openconfig/yang compatability/integration

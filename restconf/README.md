@@ -1,5 +1,9 @@
 # Restconf
-This repo is extremely out of date and lacking. At the time I started this it wasn't real clear how it should be used. If I can get more time I will try and update it. For now all I have is really one working example. I will try to get around to updating this befor too much longer.
+
+The lab I'm using for testing is containerlab and arista ceos for this. I notice that hostname look up using python requests is significantly slower than curl. If I use the IP address with python/requests I do not have the extremely slow response times. Not exactly sure why that is but its working better with IP addresssing.
+
+
+This first example is how to configure a cisco ios xe device
 
 08.03.2025_restconf_ex.py 
 - configures loopback 72
@@ -145,4 +149,58 @@ GET response:
 }
 
 pi@rasp4:~/Coding/python_folder/misc $
+```
+
+View device interface state or config
+req_intf_state_cfg.py
+```
+(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts/restconf_stuff$ python req_intf_state_cfg.py 
+Enter device: 172.20.20.6
+Enter interface (example Ethernet1..): Ethernet1
+You want the config (press 1) or state (press 2): 1
+200
+{
+  "openconfig-interfaces:description": "connected to ceos2",
+  "openconfig-interfaces:mtu": 0,
+  "openconfig-interfaces:name": "Ethernet1",
+  "openconfig-interfaces:type": "iana-if-type:ethernetCsmacd"
+}
+(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts/restconf_stuff$ python req_intf_state_cfg.py 
+Enter device: 172.20.20.6
+Enter interface (example Ethernet1..): Ethernet1
+You want the config (press 1) or state (press 2): 2
+200
+{
+  "openconfig-interfaces:admin-status": "UP",
+  "openconfig-interfaces:counters": {
+    "carrier-transitions": "2",
+    "in-broadcast-pkts": "5",
+    "in-discards": "0",
+    "in-errors": "0",
+    "in-fcs-errors": "0",
+    "in-multicast-pkts": "7229",
+    "in-octets": "10870402",
+    "in-pkts": "131926",
+    "in-unicast-pkts": "124692",
+    "out-broadcast-pkts": "0",
+    "out-discards": "0",
+    "out-errors": "0",
+    "out-multicast-pkts": "0",
+    "out-octets": "0",
+    "out-pkts": "0",
+    "out-unicast-pkts": "0"
+  },
+  "openconfig-interfaces:description": "connected to ceos2",
+  "openconfig-platform-port:hardware-port": "Ethernet1-Port",
+  "openconfig-interfaces:ifindex": 1,
+  "arista-intf-augments:inactive": false,
+  "openconfig-interfaces:last-change": "1762136595449047327",
+  "openconfig-interfaces:management": false,
+  "openconfig-interfaces:mtu": 0,
+  "openconfig-interfaces:name": "Ethernet1",
+  "openconfig-interfaces:oper-status": "UP",
+  "openconfig-platform-transceiver:transceiver": "Ethernet1",
+  "openconfig-interfaces:type": "iana-if-type:ethernetCsmacd"
+}
+(lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts/restconf_stuff$
 ```

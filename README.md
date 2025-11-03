@@ -75,7 +75,8 @@ I will be archiving or deleting scripts that no longer provide value.
 
 ### Restconf 
 - 11/03/2025 - Playing around with ceos in containerlab restconf enbaled.  Curl to device using hostname is very fast. Python using requests to hostname unbearably slow. Something with my set up?? Not sure.. IPv4 vs IPv6 setting in containerlab hostname resolution?? If I use the IPv4 address of the host instead, response time significantly improves.
-    - req_intf_state_cfg.py - get interface config or state 
+    - req_intf_state_cfg.py - get interface config or state
+    - req_intf_name_state_errors.py - get specific interface stats and print it out 
 - 08/03/2025 - This repo is lacking in almost every way. I will try and update as time permits. 
      - restconf/08.03.2025_restconf_ex.py
 - Created two scripts one to create an interface and the other to delete it

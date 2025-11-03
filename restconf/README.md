@@ -204,7 +204,7 @@ You want the config (press 1) or state (press 2): 2
 }
 (lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts/restconf_stuff$
 ```
-Using requests to grab interface data an present only what you want. In this case we want the interface name, state, packets in/out, and errors,
+Using requests to grab interface data and then present only what you want. In this case we want the interface name, state, packets in/out, and errors,
 ```
 (lab_env) todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/ceos_lab/lab3/scripts/restconf_stuff$ python req_intf_name_state_errors.py 
 Enter host: 172.20.20.7

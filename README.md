@@ -74,7 +74,7 @@ I will be archiving or deleting scripts that no longer provide value.
   - nxapi_script_ex1.py
 
 ### Restconf 
-- 11/03/2025 - Playing around with ceos in containerlab restconf enbaled.  Curl to device using hostname is very fast. Python using requests to hostname unbearably slow. Something with my set up I am not sure?? IPv4 vs IPv6 setting in containerlab hostname resolution?? If I use the IPv4 address of the host instead, response time significantly improves.
+- 11/03/2025 - Playing around with ceos in containerlab restconf enbaled.  Curl to device using hostname is very fast. Python using requests to hostname unbearably slow. Something with my set up?? Not sure.. IPv4 vs IPv6 setting in containerlab hostname resolution?? If I use the IPv4 address of the host instead, response time significantly improves.
     - req_intf_state_cfg.py - get interface config or state 
 - 08/03/2025 - This repo is lacking in almost every way. I will try and update as time permits. 
      - restconf/08.03.2025_restconf_ex.py

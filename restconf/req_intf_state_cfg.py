@@ -18,16 +18,12 @@ url_3 = "tbd"
 if num == 1:
     result = requests.get(url_1, auth=(USER, PASS), headers=headers, verify=False)
     print(result.status_code)
-
-    #This is the cleanest
     data = result.json()
     print(json.dumps(data, indent=2))
 
 elif num == 2:
     result = requests.get(url_2, auth=(USER, PASS), headers=headers, verify=False)
     print(result.status_code)
-
-    #This is the cleanest
     data = result.json()
     print(json.dumps(data, indent=2))
 

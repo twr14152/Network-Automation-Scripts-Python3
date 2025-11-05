@@ -54,7 +54,7 @@ Connected to ceos3..
 }
 Closing connection to ceos3...
 ```
-The other script is just uses jsonrpclib (instead of requests) to run commands on the device. There is a little more implicit with its code. You do not see the data format for the commands being sent. Its more implicit. 
+The other script is just uses jsonrpclib (instead of requests) to run commands on the device. If you were to log into the web interface of the arista device. You would see that this jsonrpclib is what they use when describing how to interface with this api. Pick your poison as to which you prefer. Using jsonrpclib may be considered a little more straight forward. I don't know if there is a more correct way.
 ```
 lab_script_2.py
 ```

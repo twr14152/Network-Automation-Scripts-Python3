@@ -6,7 +6,7 @@ So from a maanagement standpoint json/rpc server and gRPC server are options a c
 
 Lab set up to get familiar with cli and json rpc is two instances of srlinux connected as such:
  
- sw1 (rid 1.1.1.1) eth-1/1.0 (192.168.0.0/31) <----> (182.168.0.1/31) eth-1/1.0 (rid 2.2.2.2) sw2
+ sw1 (rid 1.1.1.1) eth-1/1.0 (192.168.0.0/31) <----> (192.168.0.1/31) eth-1/1.0 (rid 2.2.2.2) sw2
 
 - json-rpc/enable_ospf.py
 ```

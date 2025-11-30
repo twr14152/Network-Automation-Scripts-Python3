@@ -7,27 +7,21 @@ username = "admin"
 password = "NokiaSrl1!"
 
 
-sw1_get_commands = [
-   {
-    "path": "/system/information/version"
-   },
-]
+sw1_ospf_nei = "/network-instance[name=default]/protocols/ospf/instance[name=default]/area[area-id=0.0.0.0]/interface[interface-name=ethernet-1/1.0]/neighbor"
 
+sw2_ospf_nei = "/network-instance[name=default]/protocols/ospf/instance[name=default]/area[area-id=0.0.0.0]/interface[interface-name=ethernet-1/1.0]/neighbor"
 
-
-sw2_get_commands = [
-    {
-     "path": "/system/information/version"
-    }
-]
 
 
 payload_sw1 = {
     "jsonrpc": "2.0",
     "method": "get",
     "params": {
-        "commands": sw1_get_commands,
-        "output-format": "json" 
+        "datastore": "state",
+        "commands": [
+            {"path": sw1_ospf_nei},
+            ],
+        "recursive": True
     },
     "id": 1
 }
@@ -37,14 +31,18 @@ payload_sw2 = {
     "jsonrpc": "2.0",
     "method": "get",
     "params": {
-        "commands": sw2_get_commands,
-        "output-format": "json"
+        "datastore": "state",
+        "commands": [
+            {"path": sw2_ospf_nei},
+            ],
+        "recursive": True
     },
     "id": 1
 }
 
 
 try:
+    print("sw1: ")
     response = requests.post(
             url_sw1,
             data=json.dumps(payload_sw1),
@@ -61,6 +59,7 @@ except requests.exceptions.RequestException as e:
 
 
 try:
+    print("sw2: ")
     response = requests.post(
             url_sw2,
             data=json.dumps(payload_sw2),
@@ -73,3 +72,4 @@ try:
     print(json.dumps(response.json(), indent=2))
 except requests.exceptions.RequestException as e:
     print("Error: ", e)
+

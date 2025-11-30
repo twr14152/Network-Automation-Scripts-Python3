@@ -9,7 +9,6 @@ password = "NokiaSrl1!"
 set_commands = [
         {
                 "action": "update",
-                #"path": "/interface[name=mgmt0]/description:set-via-json-rpc"
                 "path": "/interface[name=ethernet-1/1]/subinterface[index=0]/description: connection to sw2"
 
             }

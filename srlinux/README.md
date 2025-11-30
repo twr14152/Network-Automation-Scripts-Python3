@@ -1,4 +1,4 @@
-# SR_linux
+# SR_linux - notes
 
 These devices are supposedly built on Yang models so in theory it will help me better understand model driven programmability.
 

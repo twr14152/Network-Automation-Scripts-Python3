@@ -15,7 +15,7 @@ sw1_get_commands = [
 
 
 
-sw2_set_commands = [
+sw2_get_commands = [
     {
      "path": "/system/information/version"
     }

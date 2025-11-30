@@ -2,12 +2,23 @@
 
 These devices are supposedly built on Yang models so in theory it will help me better understand model driven programmability.
 
-These devices can be managed by Cli or through RPCs:
-  * gRPC server
-    * gNMI
-    * gNOI
-  * json/rpc server
+So from a maanagement standpoint json/rpc server and gRPC server are options. 
 
-So I have gotten json/rpc to work. I've gotten some ospf and interface configurations to apply.  I have been unsuccessful getting ospf to establish a simple adjacency.
-The documentation on json/rpc is not bad. However the path formats are wierd and require some trial and error to get correct (ie... reading the error messages make it pretty clear whats wrong).
+Lab set up to get familiar with cli and json rpc is two instances of srlinux connected using:
+ 
+sw1 (rid 1.1.1.1) eth-1/1.0 (192.168.0.0/31) <----> (182.168.0.1/31) eth-1/1.0 (rid 2.2.2.2) sw2
+
+json-rpc/enable_ospf.py
+```
+List of things needed to get ospf adj built between the two switches
+network-instance default
+ospf router id x.x.x.x
+ospf instance default
+ospf network point-to-point
+admin enable ospf in network-instance default
+admin enable ospf interface eth 1/1.0
+```
+
+
+
 

@@ -10,8 +10,9 @@ Lab set up to get familiar with cli and json rpc is two instances of srlinux con
 
 - json-rpc/enable_ospf.py
 ```
-List of things needed to get ospf adj built between the two switches
+List of things needed to get ospf adj built between the sw1 and sw2.
 network-instance default
+ospf version 2
 ospf router id x.x.x.x
 ospf instance default
 ospf network point-to-point

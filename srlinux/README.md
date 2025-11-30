@@ -1,8 +1,13 @@
 # SR_linux - notes
 
+Links: 
+- https://documentation.nokia.com/srlinux/
+- https://yang.srlinux.dev/v25.10.1/tree
+- https://learn.srlinux.dev/
+
 These devices are built on yang models so in theory it will help me better understand model driven programmability.
 
-So from a maanagement standpoint json/rpc server and gRPC server are options a couple of automation options
+So from a maanagement standpoint json/rpc server and gRPC server are a couple of automation options.
 
 Lab set up to get familiar with cli and json rpc is two instances of srlinux connected as such:
  

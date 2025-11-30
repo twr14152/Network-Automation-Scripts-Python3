@@ -32,7 +32,13 @@ sw1_set_commands = [
         "action": "update",
         "path": "/network-instance[name=default]/protocols/ospf/instance[name=default]/area[area-id=0.0.0.0]/interface[interface-name=ethernet-1/1.0]/admin-state",
         "value": "enable"
+    },
+    {
+        "action": "update",
+        "path": "/network-instance[name=default]/protocols/ospf/instance[name=default]/admin-state",
+        "value": "enable"
     }
+
 ]
 
 
@@ -62,7 +68,13 @@ sw2_set_commands = [
         "action": "update",
         "path": "/network-instance[name=default]/protocols/ospf/instance[name=default]/area[area-id=0.0.0.0]/interface[interface-name=ethernet-1/1.0]/admin-state",
         "value": "enable"
+    },
+    {
+        "action": "update",
+        "path": "/network-instance[name=default]/protocols/ospf/instance[name=default]/admin-state",
+        "value": "enable"
     }
+
 ]
 
 

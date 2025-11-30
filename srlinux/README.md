@@ -7,7 +7,7 @@ Links:
 
 These devices are built on yang models so in theory it will help me better understand model driven programmability.
 
-So from a maanagement standpoint json/rpc server and gRPC server are a couple of automation options.
+So from a management standpoint json/rpc server and gRPC server are a couple of automation options.
 
 Lab set up to get familiar with cli and json rpc is two instances of srlinux connected as such:
  

@@ -46,7 +46,7 @@ payload = {
     "method": "set",
     "params": {
         "commands": set_commands,
-        "output-format": "json"  # or "text" if you prefer
+        "output-format": "json"
     },
     "id": 1
 }

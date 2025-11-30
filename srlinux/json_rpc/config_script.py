@@ -6,8 +6,6 @@ url = "http://clab-lab1-sw1/jsonrpc"
 username = "admin"
 password = "NokiaSrl1!"
 
-# List of set commands
-
 set_commands = [
         {
                 "action": "update",
@@ -22,7 +20,7 @@ payload = {
     "method": "set",
     "params": {
         "commands": set_commands,
-        "output-format": "json"  # or "text" if you prefer
+        "output-format": "json" 
     },
     "id": 1
 }

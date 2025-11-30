@@ -4,6 +4,12 @@ This repository holds various scripts I've written over the years.
 The goal is to create a repository that could be used for knowledge retention and reference.
 
 I will be archiving or deleting scripts that no longer provide value.
+### Srlinx
+- 11/30/2025 - Set up little two switch lab usng Srlinux in containerlab. Used json/rpc to build the ospf connection between the two switches.
+- config script - srlinux/jsonrpc/enable_ospf.py
+- gather ospf info script - srlinux/jsonrpc/get_info.py
+- update interface description - srlinux/jsonrpc/update_intf_description.py  
+
 
 ### pyGNMI
 - 10/29/2025 - Arista ceos by default use port TCP/6030 which was pre-standard so updated that to TCP/57400. You do need to update MGMT-ACL to permit it to get it to work

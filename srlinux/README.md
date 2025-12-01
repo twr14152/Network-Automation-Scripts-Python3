@@ -33,7 +33,7 @@ format
 ```
 https://documentation.nokia.com/srlinux/25-10/books/system-mgmt/json-interface.html
 
-
+Set/Get methods
 - json_rpc/update_intf_description.py - update interface config
 - json_rpc/enable_ospf.py - build the ospf
 - json_rpc/get_info.py - validation code
@@ -47,7 +47,8 @@ ospf network point-to-point
 admin enable ospf in network-instance default
 admin enable ospf interface eth 1/1.0
 ```
-
+Cli method
+- json_rpc/cli_example.py
 
 
 

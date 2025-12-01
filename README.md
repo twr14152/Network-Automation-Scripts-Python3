@@ -4,8 +4,8 @@ This repository holds various scripts I've written over the years.
 The goal is to create a repository that could be used for knowledge retention and reference.
 
 I will be archiving or deleting scripts that no longer provide value.
-### Srlinx
-- 11/30/2025 - Set up little two switch lab usng Srlinux in containerlab. Used json/rpc to build the ospf connection between the two switches.
+### json/rpc - SRLinux
+- 11/30/2025 - Set up little lab usng Srlinux in containerlab. Used json/rpc to build the ospf connection between a couple of switches.
 - config script - srlinux/json_rpc/enable_ospf.py
 - gather ospf info script - srlinux/json_rpc/get_info.py
 - update interface description - srlinux/json_rpc/update_intf_description.py

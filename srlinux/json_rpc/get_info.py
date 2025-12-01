@@ -36,7 +36,7 @@ payload_sw2 = {
         "commands": [{"path": p} for p in sw2_ospf_nei_paths],
         "recursive": True
     },
-    "id": 1
+    "id": 2
 }
 
 try:

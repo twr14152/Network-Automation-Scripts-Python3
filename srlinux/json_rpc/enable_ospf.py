@@ -96,9 +96,8 @@ payload_sw2 = {
         "commands": sw2_set_commands,
         "output-format": "json"
     },
-    "id": 1
+    "id": 2
 }
-
 
 try:
     response = requests.post(
@@ -114,8 +113,6 @@ try:
 except requests.exceptions.RequestException as e:
     print("Error: ", e)
 
-
-
 try:
     response = requests.post(
             url_sw2,
@@ -130,3 +127,24 @@ try:
 except requests.exceptions.RequestException as e:
     print("Error: ", e)
 
+
+'''
+todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/srlinux_labs/lab1/scripts$ python3 enable_ospf.py 
+200
+{
+  "result": [
+    {}
+  ],
+  "id": 1,
+  "jsonrpc": "2.0"
+}
+200
+{
+  "result": [
+    {}
+  ],
+  "id": 2,
+  "jsonrpc": "2.0"
+}
+todd@todd-TOSHIBA-DX735:~/Code_folder/containerlab/containerlabs_sandbox/srlinux_labs/lab1/scripts$ 
+'''

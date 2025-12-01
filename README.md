@@ -6,10 +6,11 @@ The goal is to create a repository that could be used for knowledge retention an
 I will be archiving or deleting scripts that no longer provide value.
 ### json/rpc - SRLinux
 - 11/30/2025 - Set up little lab usng Srlinux in containerlab. Used json/rpc to build the ospf connection between a couple of switches.
+- srlinux/README.md - provide more context and info
 - config script - srlinux/json_rpc/enable_ospf.py
 - gather ospf info script - srlinux/json_rpc/get_info.py
 - update interface description - srlinux/json_rpc/update_intf_description.py
-
+- cli example of json-rpc (The easiest to use) - srlinux/json_rpc/cli_example.py
 
 ### pyGNMI
 - 10/29/2025 - Arista ceos by default use port TCP/6030 which was pre-standard so updated that to TCP/57400. You do need to update MGMT-ACL to permit it to get it to work

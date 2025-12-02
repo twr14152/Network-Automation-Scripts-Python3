@@ -49,6 +49,7 @@ admin enable ospf interface eth 1/1.0
 ```
 Cli method
 - json_rpc/cli_example.py
+- json_rpc/lab_cli_script.py 
 
 ### gRPC
 

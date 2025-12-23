@@ -11,6 +11,7 @@ I will be archiving or deleting scripts that no longer provide value.
 - gather ospf info script - srlinux/json_rpc/get_info.py
 - update interface description - srlinux/json_rpc/update_intf_description.py
 - cli example of json-rpc (The easiest to use) - srlinux/json_rpc/cli_example.py
+- will add more as time permits
 
 ### pyGNMI
 - 10/29/2025 - Arista ceos by default use port TCP/6030 which was pre-standard so updated that to TCP/57400. You do need to update MGMT-ACL to permit it to get it to work

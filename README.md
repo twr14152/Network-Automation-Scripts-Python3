@@ -5,7 +5,7 @@ The goal is to create a repository that could be used for knowledge retention an
 
 I will be archiving or deleting scripts that no longer provide value.
 ### json/rpc - SRLinux
-- 11/30/2025 - Set up little lab usng Srlinux in containerlab. Used json/rpc to build the ospf connection between a couple of switches.
+- 11/30/2025 - Set up little lab usng Srlinux in containerlab. Used json-rpc to build the ospf connection between a couple of switches.
 - srlinux/README.md - provide more context and info
 - config script - srlinux/json_rpc/enable_ospf.py
 - gather ospf info script - srlinux/json_rpc/get_info.py

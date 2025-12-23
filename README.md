@@ -4,7 +4,7 @@ This repository holds various scripts I've written over the years.
 The goal is to create a repository that could be used for knowledge retention and reference.
 
 I will be archiving or deleting scripts that no longer provide value.
-### json/rpc - SRLinux
+### JSON-RPC - SRLinux
 - 11/30/2025 - Set up little lab usng Srlinux in containerlab. Used json-rpc to build the ospf connection between a couple of switches.
 - srlinux/README.md - provide more context and info
 - config script - srlinux/json_rpc/enable_ospf.py
